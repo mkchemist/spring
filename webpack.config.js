@@ -1,5 +1,6 @@
-const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   entry: {
@@ -73,5 +74,26 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pug/index.pug",
+      filename: "index.html",
+      minify: true
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pug/help.pug",
+      filename: "help.html",
+      minify: true
+    }),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].css",
+      chunkFilename: "css/[name].css"
+    })
+  ]
 };

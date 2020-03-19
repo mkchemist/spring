@@ -1,12 +1,9 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const OptimizeCssAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
 const MergeWebpackConfig = require("webpack-merge");
 const DefaultWebpackConfig = require("./webpack.config");
-const webpack = require("webpack");
 
 const buidlConfig = MergeWebpackConfig(DefaultWebpackConfig, {
   mode: "production",
@@ -15,6 +12,7 @@ const buidlConfig = MergeWebpackConfig(DefaultWebpackConfig, {
     path: path.resolve(__dirname, "dist"),
     pathinfo: true
   },
+  devtool: "#source-map",
   optimization: {
     minimize: true,
     minimizer: [
@@ -27,26 +25,7 @@ const buidlConfig = MergeWebpackConfig(DefaultWebpackConfig, {
     ],
     mergeDuplicateChunks: true
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery"
-    }),
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: "./src/pug/index.pug",
-      minify: {
-        removeEmptyAttributes: true,
-        removeComments: true,
-        removeTagWhitespace: true
-      }
-    }),
-    new MiniCssExtractPlugin({
-      filename: "css/[name].css",
-      chunkFilename: "css/vendor.css"
-    })
-  ]
+  plugins: [new CleanWebpackPlugin()]
 });
 
 module.exports = buidlConfig;
