@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open --config=webpack.dev.js",
-    "build": "webpack --config=webpack.prod.js"
+    "build": "webpack  --env.NODE_ENV=production --env.production --config=webpack.prod.js --progress"
   },
   "keywords": [
     "landingpage"
