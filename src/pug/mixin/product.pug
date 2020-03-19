@@ -1,5 +1,11 @@
 mixin ProductCard(product = {})
-    .p-2.col-lg-3.mx-3(data-aos="zoom-in",data-aos-duration="1500")
+    .p-2.col-lg-3.col-md-6.mx-lg-3.product-container(data-aos="zoom-in",data-aos-duration="1500")
+        if(product.sale)
+            span.sale-flag 
+                span #{product.sale}% 
+        if(product.new)
+            span.new-flag
+                span New
         .text-center.rounded.product-img-container
             block
             div.row.justify-content-between.mx-auto.px-3.product-action
@@ -13,3 +19,5 @@ mixin ProductCard(product = {})
         .px-3.mt-1.text-center
             p #{product.name}
             p.text-muted.small <strong class="text-primary">#{product.price}</strong> EGP
+            if(product.sale) 
+                p.text-muted.small.old-price #{(product.price+(product.sale*product.price)/100)} EGP 

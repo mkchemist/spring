@@ -1,0 +1,97 @@
+// product section
+.product-container {
+  img {
+    /* transition: 0.8s; */
+  }
+  position: relative;
+  &:hover {
+    box-shadow: 0px 0px 5px #1115;
+    border-radius: 15px;
+    .product-action {
+      margin-top: 0;
+    }
+
+    img {
+      animation-name: product_scale;
+      animation-duration: 1s;
+      transform: scale(1.4);
+    }
+
+    .sale-flag,
+    .new-flag {
+      opacity: 0;
+    }
+  }
+}
+.product-img-container {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  height: 250px;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .active-thumb {
+    transition: 0.5s;
+  }
+
+  .product-action {
+    transition: 0.5s;
+    background-color: lightblue;
+    padding: 0.5rem;
+    position: absolute;
+    top: 0;
+    margin-top: -50px;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+    & > a {
+      transition: 0.5s;
+      &:hover {
+        color: royalblue !important;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.sale-flag,
+.new-flag {
+  position: absolute;
+  top: 10%;
+  z-index: 100;
+  padding: 0.25rem 0.5rem;
+  color: $white;
+  border-radius: 5px;
+  font-size: 14px;
+  opacity: 0.95;
+  transition: 0.5s;
+}
+
+.sale-flag {
+  left: 80%;
+  background-color: #f17eb4;
+}
+
+.new-flag {
+  left: 0%;
+  background-color: #0aacf9;
+}
+
+.old-price {
+  text-decoration: line-through #1119;
+  font-weight: 400;
+  color: $red !important;
+}
+
+@keyframes product_scale {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
