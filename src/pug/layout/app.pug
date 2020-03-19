@@ -4,5 +4,9 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Spring E-commerce template
     body
-        block content
+        .warpper.bg-light
+        include ../components/navbar/navbar
+        .row.mx-auto.container.bg-white.px-0
+            block content
+        include ../components/footer
                 
