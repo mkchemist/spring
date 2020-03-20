@@ -1,0 +1,43 @@
+.modal.fade#spring-cart-modal(tab-index = "-1", role="dialog", aria-labelledby="#spring-cart-modal-label", aria-hidden="true")
+    .modal-dialog.modal-dialog-scrollable(role="document")
+        .modal-content
+            .modal-header
+                h5.modal-title.text-primary#spring-cart-modal-label Shopping Cart
+                button.close(type="button", aria-label="close", data-dismiss="modal")
+                    span(aria-hidden="true") &times;
+            .modal-body
+                .row.mx-auto
+                    .col-3
+                        img.img-thumbnail(src=require("../../images/products/Huawei-Y9-Prime-2019.jpg").default)
+                    .col-9.row.mx-auto
+                        p.mb-1.small.col-12 Product : <strong>Huawei Y9 prime</strong>
+                        p.mb-1.small.col-12 Old Price :<span style="text-decoration:line-through" class="text-muted">  #{((4000*21)/100)+4000}</span> EGP
+                        p.mb-1.small.col-12 Price : <strong class="text-primary">4000</strong> EGP
+                        p.mb-1.small.col-12
+                            span Sale : 
+                            span.bg-warning.p-1.rounded -21%
+                hr
+                .row.mx-auto
+                    .col-3
+                        img.img-thumbnail(src=require("../../images/products/0fbbce15480dda14df9938b93658056f.jpg").default)
+                    .col-9.row.mx-auto
+                        p.mb-1.small.col-12 Product : <strong>Nike slipper</strong>
+                        p.mb-1.small.col-12 Old Price :<span style="text-decoration:line-through" class="text-muted">  #{((400*10)/100)+400}</span> EGP
+                        p.mb-1.small.col-12 Price : <strong class="text-primary">400</strong> EGP
+                        p.mb-1.small.col-12
+                            span Sale : 
+                            span.bg-warning.p-1.rounded -10%
+                hr
+                p.offset-2.pl-4
+                     span Total : 
+                     span.font-weight-bold <span class="text-primary">#{4000+400}</span> EGP
+
+            .modal-footer
+                button.btn.btn-success(type="button", data-dismiss="modal")
+                    span
+                        i.fa.fa-times-circle
+                    span.ml-1 Close
+                button.btn.btn-primary(type="button")
+                    span
+                        i.fa.fa-check-circle
+                    span.ml-1 Checkout    
