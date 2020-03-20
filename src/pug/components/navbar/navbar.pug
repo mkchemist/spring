@@ -22,12 +22,12 @@ header(style="background-color:lightblue")
                     li.nav-item.dropdown
                         a.dropdown-toggle.nav-link.small.text-light(href="",id="lang",data-toggle="dropdown") EN
                         .dropdown-menu(aria-labelledby="#lang")
-                            span.dropdown-header.small Select langauge
+                            span.dropdown-header.small Select language
                             a.dropdown-item.small(href="") Ar
                             a.dropdown-item.small(href="") Fr
                     li.nav-item.dropdown
                         a.dropdown-toggle.nav-link.small.text-light(href="",id="currency",data-toggle="dropdown") EGP
-                        .dropdown-menu(aria-labelledby="#curreny")
+                        .dropdown-menu(aria-labelledby="#currency")
                             span.dropdown-header.small Select Currency
                             a.dropdown-item.small(href="") USD
                             a.dropdown-item.small(href="") EUR
@@ -57,13 +57,25 @@ header(style="background-color:lightblue")
             ul.nav.ml-auto.justify-content-center
                 li.nav-item.col-lg-auto.col-12.mb-lg-0.mb-2.mr-2.border-bottom.border-primary
                     form.row.mx-auto(action="")
-                        input.col.form-control-plaintext.pl-1.text-danger(type="text",style="outline:none",placeholder="search something")
+                        input.col.form-control-plaintext.pl-1.text-primary(type="text",style="outline:none",placeholder="search something")
                         button.btn.col-auto.text-primary(type="submit")
                             span
                                 i.fa.fa-search
-                li.nav-item.mx-1
-                    a.badge.badge-success.p-2(href="")
-                        span login
-                li.nav-item.mx-1
-                    a.badge.badge-primary.p-2(href="")
-                        span sign up
+                li.nav-item.mx-2
+                    a(href="", title="login")
+                        span.text-muted
+                            i.fa.fa-user-lock
+                li.nav-item.mx-2
+                    a(href="",title="create new account")
+                        span.text-muted
+                            i.fa.fa-user-plus
+                li.nav-item.mx-2
+                    a(href="",title="account")
+                        span.text-muted
+                            i.far.fa-user
+                li.nav-item.mx-2
+                    a(href="", title="shopping cart")
+                        span.text-muted
+                            i.fa.fa-shopping-cart 
+                            sup.bg-primary.rounded-circle.text-light.px-1 2
+                       
