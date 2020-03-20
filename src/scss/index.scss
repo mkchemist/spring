@@ -19,7 +19,7 @@
 .spring-tabs-container {
   .spring-tab {
     animation-name: fade_in;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
   }
   .spring-tabs-nav {
     color: lighten($dark, 50%);
@@ -27,6 +27,10 @@
     background-color: $light;
     margin: 0 0.25rem;
     border-radius: 5px;
+
+    @media (max-width: 575.98px) {
+      font-size: 90%;
+    }
   }
   .spring-active-tab {
     background-color: lighten($red, 25%);
@@ -38,13 +42,45 @@
   }
 }
 
+.product-collection-container {
+  .product-collection-item {
+    position: relative;
+
+    .collection-btn {
+      position: absolute;
+      background-color: $white;
+      border: none;
+      top: 70%;
+      left: 25%;
+      width: 50%;
+      color: $dark;
+      padding: 0.5rem;
+      border-radius: 5px;
+      font-size: 90%;
+      box-shadow: 0px 0px 5px #1114;
+      text-decoration: none;
+      transition: 0.5s;
+      opacity: 0;
+
+      &:hover {
+        background-color: $red;
+        color: $white;
+      }
+    }
+
+    &:hover {
+      .collection-btn {
+        opacity: 1;
+      }
+    }
+  }
+}
+
 @keyframes fade_in {
   from {
     opacity: 0;
-    transform: scale(0);
   }
   to {
     opacity: 1;
-    transform: scale(1);
   }
 }
