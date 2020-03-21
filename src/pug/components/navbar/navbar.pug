@@ -1,4 +1,6 @@
+// navbar block
 header(style="background-color:lightblue")
+    // info bar block
     div.bg-dark.text-light.py-0
         .row.mx-auto.d-lg-flex.d-none.container.px-2.py-0
             .col-lg.py-1
@@ -31,7 +33,7 @@ header(style="background-color:lightblue")
                             span.dropdown-header.small Select Currency
                             a.dropdown-item.small(href="") USD
                             a.dropdown-item.small(href="") EUR
-
+    // navbar
     nav.navbar.navbar-expand-lg.navbar-light.container
         a.navbar-brand.text-center(href="")
             span.h2.text-primary Spring
@@ -48,12 +50,14 @@ header(style="background-color:lightblue")
                 // dropdown menu start
                 li.nav-item.dropdown
                     a.nav-link.dropdown-toggle#shops_menu(data-toggle="dropdown", aria-expanded="false", aria-haspopup="true", role="button",href="#") Categories
+                    // shops menu
                     include navbar-dropdown
                     // dropdown menu end
                     li.nav-item
                         a.nav-link(href="./help.html")
                             span Help
             hr.d-lg-none.d-block
+            // user control block
             ul.nav.ml-auto.justify-content-center
                 li.nav-item.col-lg-auto.col-12.mb-lg-0.mb-2.mr-2.border-bottom.border-primary
                     form.row.mx-auto(action="./")
